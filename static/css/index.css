@@ -260,3 +260,36 @@ body {
   color: #333;
   font-style: italic;
 }
+
+
+
+
+/* Ensure the video container maintains space for both videos */
+.video-container {
+  position: relative;
+  width: 100%; /* Take full width of the column */
+  height: auto; /* Let height adjust based on content */
+  max-width: 600px; /* Set maximum width for the video container */
+  margin: 0 auto; /* Center container within column */
+}
+
+/* Style for the placeholder */
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0; /* Initially hide placeholder */
+  background: transparent; /* Or any color to match your design */
+  display: none; /* Hide placeholder by default */
+}
+
+/* Ensure images align with video container */
+.column.is-half .col-md-4, .column.is-half .col-sm-4, .column.is-half .col-xs-4 {
+  margin: 0 auto;
+}
+
+/* Prevent the video container from merging with next section */
+.row.border.rounded {
+  margin-bottom: 20px; /* Add space below the video container */
+}

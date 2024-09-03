@@ -435,7 +435,7 @@
 <!-- </div>
 </section> -->
 
-<section class="section">
+<!-- <section class="section">
   <div class="container is-max-widescreen">
       <div class="rows">
           <div class="rows is-centered ">
@@ -471,8 +471,6 @@
               <div class="col-md-4 col-sm-4 col-xs-4">
                   <img src="static/videos/near_target_reaching.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
 
-                  <!-- <img src="static/videos/near_run.png" width="18%" style="border-radius: 5px;" onclick="populateDemo(this, 1);"> -->
-
               </div>
 
               <br>
@@ -487,6 +485,58 @@
               </div>
           </div>
       </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3"><span class="dvima">NEAR Learnt Policies</span></h2>
+          <p>
+            These videos show the policies learnt using NEAR in several contact-rich, physics-dependent imitation tasks. We use the open-source Isaac Gym 
+            benchmark environment and compare our method with Adversarial Motion Priors (AMP) [2]. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="columns">
+      <div class="column is-half">
+        <p style="font-size: 1.5em"><b>Learnt Rewards Only</b></p>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+          <img src="static/videos/near_walk.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_run.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_crane_pose.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_left_punch.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_mummy_walk.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_spin_kick.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+        </div>
+
+        <p style="font-size: 1.5em"><b>Goal-Conditioned RL w/ Learnt Rewards</b></p>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+          <img src="static/videos/near_target_reaching.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+        </div>
+
+        <!-- <p style="font-size: 1.5em"><b>Spatially & Temporally Composed Learnt Rewards</b></p>
+        <div class="col-md-4 col-sm-4 col-xs-4">
+          <img src="static/videos/near_target_reaching.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+        </div> -->
+
+        <br>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+          <video id="demo-video-1" style="border-radius: 5px;" autoplay loop muted webkit-playsinline
+            playsinline onclick="setAttribute('controls', 'true');">
+            <source id="expandedImg-1" src="static/videos/placeholder.mp4" type="video/mp4">
+          </video>
+          <!-- Placeholder for the second video -->
+          <div id="video-placeholder-1" class="video-placeholder"></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
