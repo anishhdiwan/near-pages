@@ -493,7 +493,7 @@
     <div class="rows">
       <div class="rows is-centered">
         <div class="row is-full-width">
-          <h2 class="title is-3"><span class="dvima">NEAR Learnt Policies</span></h2>
+          <h2 class="title is-3"><span class="dvima">NEAR Policies</span></h2>
           <p>
             These videos show the policies learnt using NEAR in several contact-rich, physics-dependent imitation tasks. We use the open-source Isaac Gym 
             benchmark environment and compare our method with Adversarial Motion Priors (AMP) [2]. 
@@ -506,17 +506,17 @@
       <div class="column is-half">
         <p style="font-size: 1.5em"><b>Learnt Rewards Only</b></p>
         <div class="col-md-4 col-sm-4 col-xs-4">
-          <img src="static/videos/near_walk.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
-          <img src="static/videos/near_run.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
-          <img src="static/videos/near_crane_pose.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
-          <img src="static/videos/near_left_punch.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
-          <img src="static/videos/near_mummy_walk.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
-          <img src="static/videos/near_spin_kick.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_walk.png" width="25%" style="border-radius: 5px;" alt='Walking' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_run.png" width="25%" style="border-radius: 5px;" alt='Running' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_crane_pose.png" width="25%" style="border-radius: 5px;" alt='Crane Pose' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_left_punch.png" width="25%" style="border-radius: 5px;" alt='Left Punch' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_mummy_walk.png" width="25%" style="border-radius: 5px;" alt='Mummy Style Walking' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_spin_kick.png" width="25%" style="border-radius: 5px;" alt='Spin Kick' onclick="populateDemo(this, 1);">
         </div>
 
         <p style="font-size: 1.5em"><b>Goal-Conditioned RL w/ Learnt Rewards</b></p>
         <div class="col-md-4 col-sm-4 col-xs-4">
-          <img src="static/videos/near_target_reaching.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_target_reaching.png" width="25%" style="border-radius: 5px;" alt='Target Reaching' onclick="populateDemo(this, 1);">
         </div>
 
         <!-- <p style="font-size: 1.5em"><b>Spatially & Temporally Composed Learnt Rewards</b></p>
@@ -549,14 +549,27 @@
       <div class="level-set has-text-justified">
 
         <p>
-          In this paper, we propose to use score/energy-based generative models to learn data-informed reward functions for imitation learning.
+          Our proposed algorithm (NEAR) uses energy-based generative models to learn data-informed reward functions for imitation learning.
+          Given a dataset of the expert's state-only features $D \equiv \{ x \}$, we train a modified version of <em>Noise-conditioned Score Networks</em> [1] to learn a conditional parameterised energy function
+          $e_{\theta}(x', \sigma): \mathbb{R}^D \rightarrow \mathbb{R}$.
+
+          <br><br>
+
+          $e_{\theta}$ approximates the energy of samples $x'$ in a perturbed data distribution obtained 
+          by the local addition of Gaussian noise $\mathcal{N}(x,\sigma)$ to each sample $x$ in the expert's data distribution.
+
+          Our paper leverages the fact that the energy of a sample $x$ is essentially just a scalar-valued measure of the closeness of 
+          $x$ to the data distribution, meaning that it can be used as a reward signal to guide a policy to generate motions similar to the expert's.
+
+          
+          <!-- In this paper, we propose to use energy-based generative models to learn data-informed reward functions for imitation learning.
           Given a dataset of the expert's state-only features $D \equiv \{ x \}$, we train a modified version of <em>Noise-conditioned Score Networks</em> [1] to learn a conditional parameterised energy function
           $e_{\theta}(x', \sigma): \mathbb{R}^D \rightarrow \mathbb{R}$ that approximates the energy of samples $x'$ in a perturbed data distribution obtained 
           by the local addition of Gaussian noise $\mathcal{N}(x,\sigma)$ to each sample $x$ in the expert's data distribution. Under a geometric noise scale $\{\sigma_i\}_{i=1}^L$,
           the energy function at each noise level $\sigma_k$ is essentially a dilated version of the original data distribution's energy landscape. Our paper leverages 
           the fact that for a sample $x \in X$, where $X$ is the space of data samples, the energy of the sample is essentially just a scalar-valued measure of the closeness of 
           $x$ to the data distribution, meaning that it can be used as a reward signal to guide a policy to generate motions that gradually resemble those in the expert 
-          data distribution. Hence, we propose to use these learnt energy functions as reward functions in reinforcement learning. 
+          data distribution. Hence, we propose to use these learnt energy functions as reward functions in reinforcement learning.  -->
 
           <br><br>
           We also introduce an annealing method inspired by <em>Annealed Langevin Dynamics</em> [1] to gradually switch between these learnt energy functions depending
@@ -677,10 +690,13 @@
         }
 
         // Add the first title "Vid1" with proper styling
+        var name = imgs.alt;
         var title1 = document.createElement("h3");
         title1.id = "title1-" + num;
-        title1.innerText = "NEAR";
-        // title1.style.fontWeight = "bold";  // Make it look like a title
+        title1.innerText = "NEAR: " + name;
+        title1.style.fontSize="1.2em";
+        title1.style.textAlign="center";
+        title1.style.fontWeight = "bold";  // Make it look like a title
         video1.parentElement.insertBefore(title1, video1);
 
         // Create the second video source by replacing "near" with "amp"
@@ -707,9 +723,10 @@
         // Add the second title "Vid2" with proper styling
         var title2 = document.createElement("h3");
         title2.id = "title2-" + num;
-        title2.innerText = "AMP";
-        
-        // title2.style.fontWeight = "bold";  // Make it look like a title
+        title2.innerText = "AMP: " + name;
+        title2.style.fontSize="1.2em";
+        title2.style.textAlign="center";
+        title2.style.fontWeight = "bold";  // Make it look like a title
 
         // Append the second title and video to the parent element
         var parentElement = video1.parentElement;
