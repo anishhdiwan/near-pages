@@ -482,7 +482,8 @@
                   <video id="demo-video-1" style="border-radius: 5px;" autoplay loop muted webkit-playsinline
                       playsinline onclick="setAttribute('controls', 'true');">
                       <source id="expandedImg-1" src="static/videos/placeholder.mp4" type="video/mp4">
-                  </video>
+                  </video> 
+                  <div id="video-placeholder-1" style="height: 400px; width: 600px;"></div>                 
               </div>
           </div>
       </div>
@@ -594,71 +595,94 @@
 
   </body>
 
+<script>
+  timeoutIds = [];
 
+  function populateDemo(imgs, num) {
+      // Get the expanded image (the <source> tag inside the first video)
+      var expandImg = document.getElementById("expandedImg-" + num);
+      // Get the first video element
+      var video1 = document.getElementById('demo-video-' + num);
+      var placeholder = document.getElementById('video-placeholder-' + num);
 
-  <script>
+      // Update the first video (Vid1)
+      expandImg.src = imgs.src.replace(".png", ".mp4");
+      video1.pause();
+      video1.load();
+      video1.play();
 
-    timeoutIds = [];
+      // Remove any existing Vid1 and Vid2 titles and video2 elements to avoid duplication
+      var existingTitle1 = document.getElementById("title1-" + num);
+      var existingTitle2 = document.getElementById("title2-" + num);
+      var existingVideo2 = document.getElementById('demo-video2-' + num);
 
-    function populateDemo(imgs, num) {
-        // Get the expanded image
-        var expandImg = document.getElementById("expandedImg-" + num);
-        // Get the image text
-        var imgText = document.getElementById("imgtext-" + num);
-        var answer = document.getElementById("answer-" + num);
+      if (existingTitle1) {
+          existingTitle1.remove();
+      }
+      if (existingTitle2) {
+          existingTitle2.remove();
+      }
+      if (existingVideo2) {
+          existingVideo2.remove();
+      }
 
-        // Use the same src in the expanded image as the image being clicked on from the grid
-        expandImg.src = imgs.src.replace(".png", ".mp4");
-        var video = document.getElementById('demo-video-' + num);
-        // or video = $('.video-selector')[0];
-        video.pause()
-        video.load();
-        video.play();
-        video.removeAttribute('controls');
+      // Add the first title "Vid1" with proper styling
+      var title1 = document.createElement("h3");
+      title1.id = "title1-" + num;
+      title1.innerText = "NEAR";
+      // title1.style.fontWeight = "bold";  // Make it look like a title
+      title1.style.fontSize="1.2em";
+      title1.style.textAlign="center";
+      video1.parentElement.insertBefore(title1, video1);
 
-        console.log(expandImg.src);
-        // Use the value of the alt attribute of the clickable image as text inside the expanded image
-        var qa = imgs.alt.split("[sep]");
-        imgText.innerHTML = qa[0];
-        answer.innerHTML = "";
-        // Show the container element (hidden with CSS)
-        expandImg.parentElement.style.display = "block";
-        for (timeoutId of timeoutIds) {
-            clearTimeout(timeoutId);
-        }
+      // Create the second video source by replacing "near" with "amp"
+      var originalSrc = imgs.src;
+      var secondVideoSrc = originalSrc.replace(".png", ".mp4").replace("near_", "amp_");
 
-        // NOTE (wliang): Modified from original to read from file instead
-        fetch(qa[1])
-            .then(response => response.text())
-            .then(contents => {
-                // Call the processData function and pass the contents as an argument
-                typeWriter(contents, 0, qa[0], num);
-            })
-            .catch(error => console.error('Error reading file:', error));
-    }
+      // Log the original and transformed URLs for debugging
+      console.log("Original image source:", originalSrc);
+      console.log("Second video source (transformed):", secondVideoSrc);
 
-    // function typeWriter(txt, i, q, num) {
-    //     var imgText = document.getElementById("imgtext-" + num);
-    //     var answer = document.getElementById("answer-" + num);
-    //     if (imgText.innerHTML == q) {
-    //         for (let k = 0; k < 5; k++) {
-    //             if (i < txt.length) {
-    //                 if (txt.charAt(i) == "\\") {
-    //                     answer.innerHTML += "\n";
-    //                     i += 1;
-    //                 } else {
-    //                     answer.innerHTML += txt.charAt(i);
-    //                 }
-    //                 i++;
-    //             }
-    //         }
-    //         hljs.highlightAll();
-    //         timeoutIds.push(setTimeout(typeWriter, 1, txt, i, q, num));
-    //     }
-    // }
+      // Create and append the second video element
+      var video2 = document.createElement('video');
+      video2.id = 'demo-video2-' + num;
+      video2.setAttribute("controls", "true");
+      video2.setAttribute("width", "600"); // Set the width (same as placeholder)
+      video2.setAttribute("height", "400"); // Set the height (same as placeholder)
 
+      // Create and set the source for the second video
+      var source2 = document.createElement("source");
+      source2.src = secondVideoSrc;
+      source2.type = "video/mp4";
+      video2.appendChild(source2);
+
+      // Add the second title "Vid2" with proper styling
+      var title2 = document.createElement("h3");
+      title2.id = "title2-" + num;
+      title2.innerText = "AMP";
+      // title2.style.fontWeight = "bold";  // Make it look like a title
+      title2.style.fontSize="1.2em";
+      title2.style.textAlign="center";
+
+      // Append the second title and video to the parent element
+      var parentElement = video1.parentElement;
+      parentElement.appendChild(title2);
+      parentElement.appendChild(video2);
+
+      // Hide the placeholder once the second video is added
+      placeholder.style.display = "none"; // Hide the placeholder
+      placeholder.style.height = "0"; // Remove the height
+      placeholder.style.width = "0"; // Remove the width
+
+      // Play the second video
+      video2.load();
+      video2.play();
+
+      // Debugging: Log the source URLs of both videos
+      console.log("First video source:", expandImg.src);
+      console.log("Second video source:", secondVideoSrc);
+  }
 </script>
-
 
 
 </html>
