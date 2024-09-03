@@ -263,7 +263,6 @@ body {
 
 
 
-
 /* Ensure the video container maintains space for both videos */
 .video-container {
   position: relative;
@@ -284,6 +283,26 @@ body {
   display: none; /* Hide placeholder by default */
 }
 
+/* Style for videos to hide controls and ensure proper alignment */
+video {
+  border-radius: 5px; /* Match the styling of the first video */
+  width: 100%; /* Full width of the parent container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Ensure block-level formatting */
+  object-fit: cover; /* Ensure the video covers the container */
+}
+
+/* Hide video controls */
+video::-webkit-media-controls {
+  display: none !important; /* For WebKit browsers */
+}
+video::-moz-media-controls {
+  display: none !important; /* For Mozilla browsers */
+}
+video::-ms-media-controls {
+  display: none !important; /* For Microsoft Edge */
+}
+
 /* Ensure images align with video container */
 .column.is-half .col-md-4, .column.is-half .col-sm-4, .column.is-half .col-xs-4 {
   margin: 0 auto;
@@ -293,3 +312,4 @@ body {
 .row.border.rounded {
   margin-bottom: 20px; /* Add space below the video container */
 }
+

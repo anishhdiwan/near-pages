@@ -645,93 +645,89 @@
 
   </body>
 
-<script>
-  timeoutIds = [];
+  <script>
+    timeoutIds = [];
 
-  function populateDemo(imgs, num) {
-      // Get the expanded image (the <source> tag inside the first video)
-      var expandImg = document.getElementById("expandedImg-" + num);
-      // Get the first video element
-      var video1 = document.getElementById('demo-video-' + num);
-      var placeholder = document.getElementById('video-placeholder-' + num);
+    function populateDemo(imgs, num) {
+        // Get the expanded image (the <source> tag inside the first video)
+        var expandImg = document.getElementById("expandedImg-" + num);
+        // Get the first video element
+        var video1 = document.getElementById('demo-video-' + num);
+        var placeholder = document.getElementById('video-placeholder-' + num);
 
-      // Update the first video (Vid1)
-      expandImg.src = imgs.src.replace(".png", ".mp4");
-      video1.pause();
-      video1.load();
-      video1.play();
+        // Update the first video (Vid1)
+        expandImg.src = imgs.src.replace(".png", ".mp4");
+        video1.pause();
+        video1.load();
+        video1.play();
 
-      // Remove any existing Vid1 and Vid2 titles and video2 elements to avoid duplication
-      var existingTitle1 = document.getElementById("title1-" + num);
-      var existingTitle2 = document.getElementById("title2-" + num);
-      var existingVideo2 = document.getElementById('demo-video2-' + num);
+        // Remove any existing Vid1 and Vid2 titles and video2 elements to avoid duplication
+        var existingTitle1 = document.getElementById("title1-" + num);
+        var existingTitle2 = document.getElementById("title2-" + num);
+        var existingVideo2 = document.getElementById('demo-video2-' + num);
 
-      if (existingTitle1) {
-          existingTitle1.remove();
-      }
-      if (existingTitle2) {
-          existingTitle2.remove();
-      }
-      if (existingVideo2) {
-          existingVideo2.remove();
-      }
+        if (existingTitle1) {
+            existingTitle1.remove();
+        }
+        if (existingTitle2) {
+            existingTitle2.remove();
+        }
+        if (existingVideo2) {
+            existingVideo2.remove();
+        }
 
-      // Add the first title "Vid1" with proper styling
-      var title1 = document.createElement("h3");
-      title1.id = "title1-" + num;
-      title1.innerText = "NEAR";
-      // title1.style.fontWeight = "bold";  // Make it look like a title
-      title1.style.fontSize="1.2em";
-      title1.style.textAlign="center";
-      video1.parentElement.insertBefore(title1, video1);
+        // Add the first title "Vid1" with proper styling
+        var title1 = document.createElement("h3");
+        title1.id = "title1-" + num;
+        title1.innerText = "NEAR";
+        // title1.style.fontWeight = "bold";  // Make it look like a title
+        video1.parentElement.insertBefore(title1, video1);
 
-      // Create the second video source by replacing "near" with "amp"
-      var originalSrc = imgs.src;
-      var secondVideoSrc = originalSrc.replace(".png", ".mp4").replace("near_", "amp_");
+        // Create the second video source by replacing "near" with "amp"
+        var originalSrc = imgs.src;
+        var secondVideoSrc = originalSrc.replace(".png", ".mp4").replace("near_", "amp_");
 
-      // Log the original and transformed URLs for debugging
-      console.log("Original image source:", originalSrc);
-      console.log("Second video source (transformed):", secondVideoSrc);
+        // Log the original and transformed URLs for debugging
+        console.log("Original image source:", originalSrc);
+        console.log("Second video source (transformed):", secondVideoSrc);
 
-      // Create and append the second video element
-      var video2 = document.createElement('video');
-      video2.id = 'demo-video2-' + num;
-      video2.setAttribute("controls", "true");
-      video2.setAttribute("width", "600"); // Set the width (same as placeholder)
-      video2.setAttribute("height", "400"); // Set the height (same as placeholder)
+        // Create and append the second video element
+        var video2 = document.createElement('video');
+        video2.id = 'demo-video2-' + num;
+        video2.setAttribute("autoplay", "true"); // Enable autoplay
+        video2.setAttribute("loop", "true"); // Enable looping
+        video2.setAttribute("muted", "true"); // Ensure video is muted for autoplay compliance
 
-      // Create and set the source for the second video
-      var source2 = document.createElement("source");
-      source2.src = secondVideoSrc;
-      source2.type = "video/mp4";
-      video2.appendChild(source2);
+        // Create and set the source for the second video
+        var source2 = document.createElement("source");
+        source2.src = secondVideoSrc;
+        source2.type = "video/mp4";
+        video2.appendChild(source2);
 
-      // Add the second title "Vid2" with proper styling
-      var title2 = document.createElement("h3");
-      title2.id = "title2-" + num;
-      title2.innerText = "AMP";
-      // title2.style.fontWeight = "bold";  // Make it look like a title
-      title2.style.fontSize="1.2em";
-      title2.style.textAlign="center";
+        // Add the second title "Vid2" with proper styling
+        var title2 = document.createElement("h3");
+        title2.id = "title2-" + num;
+        title2.innerText = "AMP";
+        
+        // title2.style.fontWeight = "bold";  // Make it look like a title
 
-      // Append the second title and video to the parent element
-      var parentElement = video1.parentElement;
-      parentElement.appendChild(title2);
-      parentElement.appendChild(video2);
+        // Append the second title and video to the parent element
+        var parentElement = video1.parentElement;
+        parentElement.appendChild(title2);
+        parentElement.appendChild(video2);
 
-      // Hide the placeholder once the second video is added
-      placeholder.style.display = "none"; // Hide the placeholder
-      placeholder.style.height = "0"; // Remove the height
-      placeholder.style.width = "0"; // Remove the width
+        // Hide the placeholder once the second video is added
+        placeholder.style.display = "none"; // Hide the placeholder
+        placeholder.style.height = "0"; // Remove the height
+        placeholder.style.width = "0"; // Remove the width
 
-      // Play the second video
-      video2.load();
-      video2.play();
+        // Make sure the second video is playing
+        video2.play().catch(error => console.error('Error attempting to play video:', error));
 
-      // Debugging: Log the source URLs of both videos
-      console.log("First video source:", expandImg.src);
-      console.log("Second video source:", secondVideoSrc);
-  }
+        // Debugging: Log the source URLs of both videos
+        console.log("First video source:", expandImg.src);
+        console.log("Second video source:", secondVideoSrc);
+    }
 </script>
 
 
