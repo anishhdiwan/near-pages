@@ -2,7 +2,6 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
-
 .footer .icon-link {
     font-size: 25px;
     color: #000;
@@ -134,4 +133,130 @@ body {
 }
 
 
+:root {
+  --video-width: 100%; /* Adjust this value to change the video width */
+}
 
+/* New Section: Video Grid Styling */
+.video-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px 20px; /* 20px row gap, 40px column gap */
+  max-width: 1200px;
+  width: 65%;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  /* background-color: #fff; Optional: white background for the grid */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); Optional: subtle shadow */
+  /* border-radius: 8px; Optional: rounded corners */
+}
+
+.video-grid-column-title {
+  text-align: center;
+  font-size: 1.5em;
+  margin: 0px 0;
+  color: #333;
+}
+
+.video-grid-hero-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.video-grid-video {
+  width: var(--video-width);
+  height: auto;
+  /* border: 2px solid #ddd; Optional: border around videos */
+  /* border-radius: 4px; Optional: rounded video corners */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); Optional: subtle shadow */
+}
+
+.video-grid-row-caption {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 10px 0;
+  font-style: italic;
+  color: #666;
+}
+
+
+.video-grid-item-caption {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin: 10px 0;
+  font-style: italic;
+  color: #666;
+  font-size: 0.8em;
+}
+
+
+@media (max-width: 768px) {
+  .video-grid-container {
+      grid-template-columns: 1fr; /* Stack videos on smaller screens */
+  }
+}
+
+
+
+/* Image block container */
+.image-block-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between images */
+  margin: 0px 0;
+}
+
+/* Individual images */
+.image-block img {
+  max-width: 100%;
+  height: auto;
+  /* border-radius: 8px; Optional: rounded corners */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Optional: subtle shadow */
+}
+
+/* Common caption */
+.image-block-caption {
+  text-align: center;
+  /* font-size: 1.2em; */
+  /* color: #333; */
+  margin-top: 10px;
+  font-style: italic;
+}
+
+
+
+
+/* Video gallery container */
+.video-gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  gap: 20px; /* Space between videos */
+  max-width: 1200px;
+  margin: 20px auto; /* Center the gallery on the page */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Individual video block */
+.video-block {
+  text-align: center;
+}
+
+.video-block video {
+  width: 100%;
+  height: auto;
+  /* border-radius: 8px; Optional: rounded corners */
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); Optional: subtle shadow */
+}
+
+/* Video caption */
+.video-block-caption {
+  margin-top: 10px;
+  font-size: 1em;
+  color: #333;
+  font-style: italic;
+}

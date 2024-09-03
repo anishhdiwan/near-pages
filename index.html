@@ -24,8 +24,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <title>Noise-conditioned Energy-based Annealed Rewards (NEAR)</title>
+  <link rel="icon" type="image/x-icon" href="static/images/tu_flame.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,36 +43,70 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <!-- MathJax -->
+  <script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+  };
+  </script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+
 </head>
 <body>
 
 
   <section class="hero">
     <div class="hero-body">
-      <div class="container is-max-desktop">
+      <div class="container is-max-widescreen">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Noise-conditioned Energy-based Annealed Rewards (NEAR)</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://www.anishdiwan.com/" target="_blank">Anish Abhijit Diwan </a><sup style="font-size:50%">1</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://robotgradient.com/" target="_blank">Julen Urain de Jesus </a><sup style="font-size:50%">2</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="http://jenskober.de/index.php" target="_blank">Jens Kober </a><sup style="font-size:50%">1</sup>,
                   </span>
+                    <span class="author-block">
+                      <a href="https://www.ias.informatik.tu-darmstadt.de/Team/JanPeters" target="_blank">Jan Peters </a><sup style="font-size:50%">2</sup>,
+                    </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block"><sup style="font-size:50%">1</sup> Cognitive Robotics, TU Delft<br><sup style="font-size:50%">2</sup> Intelligent Autonomous Systems, TU Darmstadt
+                    <br>
+                    <!-- <a href="LINK" target="_blank">VENUE</a> - Sub-Venue xxxx -->
+                    </span>
+                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span> -->
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
+
+                    <!-- ArXiv abstract Link -->
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
                          <!-- Arxiv PDF link -->
-                      <span class="link-block">
+                      <!-- <span class="link-block">
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
@@ -80,10 +114,10 @@
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -91,11 +125,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/anishhdiwan/near" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -104,16 +138,16 @@
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
+                <!-- Dataset -->
+
                 <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+                  <a href="https://doi.org/10.4121/0448aab2-3332-449f-a8e2-d208cb58c7df" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon" style="vertical-align: middle; font-size: 15px;">&#128190;</span>
+                      <span style="vertical-align: middle;">Dataset</span>
+                  </a>
+              </span> 
+
             </div>
           </div>
         </div>
@@ -125,30 +159,36 @@
 
 <!-- Teaser video-->
 <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
+  <div class="container is-max-widescreen">
+    <div class="hero-body" style="text-align: center;">
+      <video poster="" id="tree" autoplay controls muted loop style="width: 90%; height: auto;">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/near_run.mp4"
         type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
+      <!-- <h2 class="subtitle has-text-centered">
+        Running imitation policy learnt using NEAR.
+      </h2> -->
     </div>
   </div>
 </section>
 <!-- End teaser video -->
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
+<section class="section hero ">
+  <div class="container is-max-widescreen">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            This paper introduces a new imitation learning framework based on energy-based generative models capable of generating complex, life-like, physics-dependent motions, through state-only expert motion trajectories. 
+            Our algorithm, called Noise-conditioned Energy-based Annealed Rewards (NEAR), constructs several perturbed versions of the expert's motion data distribution and learns smooth, and well-defined representations of the data distribution's energy function 
+            using denoising score matching. We propose to use these learnt energy functions as reward functions to learn imitation policies via reinforcement learning. We also present a strategy to gradually switch between the learnt energy functions, 
+            ensuring that the learnt rewards are always well-defined in the manifold of policy-generated samples, thereby improving the learnt policies. 
+            We evaluate our algorithm on complex humanoid tasks such as locomotion and martial arts and compare it with state-only adversarial imitation learning algorithms like Adversarial Motion Priors (AMP). 
+            Our framework sidesteps the optimisation challenges of conventional generative imitation learning techniques and produces results comparable to AMP in several quantitative metrics across multiple tasks. 
+            Finally, a portion of this paper also analyses the optimisation challenges of adversarial imitation learning algorithms, and discusses some previously under-explored failure modes, providing rigorous empirical results to back our argumentation. 
           </p>
         </div>
       </div>
@@ -158,130 +198,368 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
-<section class="hero is-small">
+
+
+<!-- Video Grid Section -->
+<!-- <section class="hero teaser">
+  <div class="container is-max-widescreen video-grid-container">
+
+    <div class="video-grid-column-title">
+      <h2>NEAR</h2>
+    </div>
+    <div class="video-grid-column-title">
+      <h2>AMP</h2>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video1" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/near_walk.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video2" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/amp_walk.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-grid-item-caption">
+      <h5>Walking</h5>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video3" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/near_run.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video4" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/amp_run.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-grid-item-caption">
+      <h5>Running</h5>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video5" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/near_left_punch.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video6" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/amp_left_punch.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-grid-item-caption">
+      <h5>Single Left Punch</h5>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video7" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/near_crane_pose.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video8" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/amp_crane_pose.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-grid-item-caption">
+      <h5>Crane Pose</h5>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video7" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/near_mummy_walk.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video8" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/amp_mummy_walk.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-grid-item-caption">
+      <h5>Mummy Style Walking</h5>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video7" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/near_spin_kick.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video8" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/amp_spin_kick.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-grid-item-caption">
+      <h5>Spin Kick (visualised at a lower frame rate)</h5>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video7" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/NEAR_target_reaching.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="video-grid-hero-body">
+      <video poster="" id="video8" autoplay controls muted loop class="video-grid-video">
+        <source src="static/videos/amp_target_reaching.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-grid-item-caption">
+      <h5>Goal-conditioned target reaching (with learnt rewards for walking)</h5>
+    </div>
+
+    <div class="video-grid-row-caption">
+      <h3>A comparison of the best policies learnt using NEAR and AMP. NEAR outperforms AMP on both quantitative metrics and qualitative (visual) comparison across all tasks</h3>
+    </div>
+
+  </div>
+</section> -->
+<!-- End Video Grid Section -->
+
+
+
+<!-- <section class="hero is-small ">
   <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
+    <div class="container  is-max-widescreen">
+      <h2 class="title is-3">Datasets</h2>
+      <div class="level-set has-text-justified">
+
+        <p>
+          Below we show examples of the input data required for these algorithms. We use open-source humanoid motion-capture clips for a variety of
+          complex tasks. The input to NEAR is simply a set of state-transition features $\{ (s,s') \}$ from these motions, where each state $s$ is
+          a vector of the cartesian positions and velocities of the character's joints. 
+        </p>
      </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
+
+   </div>
+ </div>
+</section> -->
 
 
 
+<!-- <section class="hero teaser is-small ">
+  <div class="video-gallery-container"> -->
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+    <!-- Row 1 -->
+    <!-- <div class="video-block">
+        <video poster="" id="video1" autoplay controls muted loop>
+            <source src="static/videos/walk_demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Walking</h3>
         </div>
-      </div>
     </div>
+
+    <div class="video-block">
+        <video poster="" id="video2" autoplay controls muted loop>
+            <source src="static/videos/run_demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Running</h3>
+        </div>
+    </div>
+
+    <div class="video-block">
+        <video poster="" id="video3" autoplay controls muted loop>
+            <source src="static/videos/left_punch_demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Single Left Punch</h3>
+        </div>
+    </div> -->
+
+    <!-- Row 2 -->
+    <!-- <div class="video-block">
+        <video poster="" id="video4" autoplay controls muted loop>
+            <source src="static/videos/crane_pose_demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Crane Pose</h3>
+        </div>
+    </div>
+
+     <div class="video-block">
+        <video poster="" id="video5" autoplay controls muted loop>
+            <source src="static/videos/mummy_walk_demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Mummy Style Walking</h3>
+        </div>
+    </div>
+
+    <div class="video-block">
+        <video poster="" id="video6" autoplay controls muted loop>
+            <source src="static/videos/single_spin_kick_demo.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Spin Kick</h3>
+        </div>
+    </div> -->
+
+    <!-- Row 3 -->
+    <!-- <div class="video-block">
+        <video poster="" id="video7" autoplay controls muted loop>
+            <source src="static/videos/video7.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Some caption</h3>
+        </div>
+    </div>
+
+    <div class="video-block">
+        <video poster="" id="video8" autoplay controls muted loop>
+            <source src="static/videos/video8.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Some caption</h3>
+        </div>
+    </div>
+
+    <div class="video-block">
+        <video poster="" id="video9" autoplay controls muted loop>
+            <source src="static/videos/video9.mp4" type="video/mp4">
+        </video>
+        <div class="video-grid-row-caption">
+          <h3>Some caption</h3>
+        </div>
+    </div> -->
+
+<!-- </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-widescreen">
+      <div class="rows">
+          <div class="rows is-centered ">
+              <div class="row is-full-width">
+                  <h2 class="title is-3"><span class="dvima">NEAR Learnt Policies</span></h2>
+                  <p>
+                      These videos show the policies learnt using NEAR in several contact-rich, physics-dependent imitation tasks. We use the open-source Isaac Gym 
+                      benchmark environment and compare our method with Adversarial Motion Priors (AMP) [2]. 
+                  </p>
+              </div>
+          </div>
+      </div>
+      <br>
+      <div class="columns" style="align-items: end;">
+          <div class="column is-half">
+              <p style="font-size: 1.5em"><b>Learnt Rewards Only</b></p>
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                  <img src="static/videos/near_walk.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+
+                  <img src="static/videos/near_run.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+
+                  <img src="static/videos/near_crane_pose.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+
+                  <img src="static/videos/near_left_punch.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+
+                  <img src="static/videos/near_mummy_walk.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+
+                  <img src="static/videos/near_spin_kick.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+
+              </div>
+
+              <p style="font-size: 1.5em"><b>Goal-Conditioned RL w/ Learnt Rewards</b></p>
+              <div class="col-md-4 col-sm-4 col-xs-4">
+                  <img src="static/videos/near_target_reaching.png" width="25%" style="border-radius: 5px;" onclick="populateDemo(this, 1);">
+
+                  <!-- <img src="static/videos/near_run.png" width="18%" style="border-radius: 5px;" onclick="populateDemo(this, 1);"> -->
+
+              </div>
+
+              <br>
+          </div>
+          <div class="row border rounded" style="padding-top:12px; padding-bottom:12px;">
+              <div class="col-md-6">
+                  <video id="demo-video-1" style="border-radius: 5px;" autoplay loop muted webkit-playsinline
+                      playsinline onclick="setAttribute('controls', 'true');">
+                      <source id="expandedImg-1" src="static/videos/placeholder.mp4" type="video/mp4">
+                  </video>
+              </div>
+          </div>
+      </div>
   </div>
 </section>
-<!-- End youtube video -->
 
 
-<!-- Video carousel -->
+
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3">Energy Functions as Reward Functions</h2>
+      <div class="level-set has-text-justified">
+
+        <p>
+          In this paper, we propose to use score/energy-based generative models to learn data-informed reward functions for imitation learning.
+          Given a dataset of the expert's state-only features $D \equiv \{ x \}$, we train a modified version of <em>Noise-conditioned Score Networks</em> [1] to learn a conditional parameterised energy function
+          $e_{\theta}(x', \sigma): \mathbb{R}^D \rightarrow \mathbb{R}$ that approximates the energy of samples $x'$ in a perturbed data distribution obtained 
+          by the local addition of Gaussian noise $\mathcal{N}(x,\sigma)$ to each sample $x$ in the expert's data distribution. Under a geometric noise scale $\{\sigma_i\}_{i=1}^L$,
+          the energy function at each noise level $\sigma_k$ is essentially a dilated version of the original data distribution's energy landscape. Our paper leverages 
+          the fact that for a sample $x \in X$, where $X$ is the space of data samples, the energy of the sample is essentially just a scalar-valued measure of the closeness of 
+          $x$ to the data distribution, meaning that it can be used as a reward signal to guide a policy to generate motions that gradually resemble those in the expert 
+          data distribution. Hence, we propose to use these learnt energy functions as reward functions in reinforcement learning. 
+
+          <br><br>
+          We also introduce an annealing method inspired by <em>Annealed Langevin Dynamics</em> [1] to gradually switch between these learnt energy functions depending
+          on the agents progress in the imitation task. 
+          Because of the dilated nature of these energy functions, they are prone to be constant-valued depending on the level of dilation and manifold of samples
+          generated by the current policy.
+          Annealing ensures that the reward function being used in reinforcement learning is always well defined, non-constant, and smooth in the manifold of
+          policy generated samples. An example of the dilated energy function in a 2D goal-reaching task is shown below.   
+        </p>
+     </div>
+
+     <br><br>
+
+      <div class="image-block-container">
+        <div class="image-block">
+            <img src="static/images/new_illustration.png" alt="Image 1", width="100%">
         </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
+        <!-- <div class="image-block">
+            <img src="static/images/maze_env_ncsnv2.png" alt="Image 2", width="80%">
+        </div> -->
       </div>
-    </div>
-  </div>
+      <!-- Common Caption for images -->
+      <div class="video-grid-row-caption">
+        <h3>An illustration of the AMP discriminator's learnt rewards and decision boundary in a 2D target reaching imitation task. In constrast, NEAR learns a smoother and more accurate reward function.</h3>
+      </div>
+      <!-- <br><br>
+      Below, we show comparisons between the policies learnt using NEAR and those learnt using Adversarial Motion Priors (AMP) [2]. -->
+   </div>
+ </div>
 </section>
-<!-- End video carousel -->
 
-
-
-
-
-
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
 
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
+    <div class="container is-max-widescreen content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
 </section>
 <!--End BibTex citation -->
+
+
+<!--References -->
+<section class="section hero " id="References">
+  <div class="container is-max-widescreen content">
+    <h2 class="title">References</h2>
+    <ol>
+      <li>Song Y, Ermon S. Generative modeling by estimating gradients of the data distribution. Advances in neural information processing systems. 2019;32.</li>
+      <li>Peng XB, Ma Z, Abbeel P, Levine S, Kanazawa A. Amp: Adversarial motion priors for stylized physics-based character control. ACM Transactions on Graphics (ToG). 2021 Jul 19;40(4):1-20.</li>
+   </ol>
+  </div>
+</section>
+<!--References -->
 
 
   <footer class="footer">
@@ -291,9 +569,15 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+
+            The authors acknowledge the use of computational resources of the DelftBlue supercomputer, provided by <a href="https://www.tudelft.nl/dhpc" target="_blank">Delft High Performance Computing Centre</a>. 
+            <br><br>
+            Some of the data used in this project was obtained from <a href="http://mocap.cs.cmu.edu/" target="_blank">mocap.cs.cmu.edu</a>. The database was created with funding from NSF EIA-0196217.
+            <br><br>
+            Some of the data used in this project was obtained from <a href="http://mocap.cs.sfu.ca" target="_blank">mocap.cs.sfu.ca</a>. The database was created with funding from NUS AcRF R-252-000-429-133 and SFU President’s Research Start-up Grant.
+            <br><br>
+            <small><small>This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>. This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.</small></small>
           </p>
 
         </div>
@@ -309,4 +593,72 @@
     <!-- End of Statcounter Code -->
 
   </body>
-  </html>
+
+
+
+  <script>
+
+    timeoutIds = [];
+
+    function populateDemo(imgs, num) {
+        // Get the expanded image
+        var expandImg = document.getElementById("expandedImg-" + num);
+        // Get the image text
+        var imgText = document.getElementById("imgtext-" + num);
+        var answer = document.getElementById("answer-" + num);
+
+        // Use the same src in the expanded image as the image being clicked on from the grid
+        expandImg.src = imgs.src.replace(".png", ".mp4");
+        var video = document.getElementById('demo-video-' + num);
+        // or video = $('.video-selector')[0];
+        video.pause()
+        video.load();
+        video.play();
+        video.removeAttribute('controls');
+
+        console.log(expandImg.src);
+        // Use the value of the alt attribute of the clickable image as text inside the expanded image
+        var qa = imgs.alt.split("[sep]");
+        imgText.innerHTML = qa[0];
+        answer.innerHTML = "";
+        // Show the container element (hidden with CSS)
+        expandImg.parentElement.style.display = "block";
+        for (timeoutId of timeoutIds) {
+            clearTimeout(timeoutId);
+        }
+
+        // NOTE (wliang): Modified from original to read from file instead
+        fetch(qa[1])
+            .then(response => response.text())
+            .then(contents => {
+                // Call the processData function and pass the contents as an argument
+                typeWriter(contents, 0, qa[0], num);
+            })
+            .catch(error => console.error('Error reading file:', error));
+    }
+
+    // function typeWriter(txt, i, q, num) {
+    //     var imgText = document.getElementById("imgtext-" + num);
+    //     var answer = document.getElementById("answer-" + num);
+    //     if (imgText.innerHTML == q) {
+    //         for (let k = 0; k < 5; k++) {
+    //             if (i < txt.length) {
+    //                 if (txt.charAt(i) == "\\") {
+    //                     answer.innerHTML += "\n";
+    //                     i += 1;
+    //                 } else {
+    //                     answer.innerHTML += txt.charAt(i);
+    //                 }
+    //                 i++;
+    //             }
+    //         }
+    //         hljs.highlightAll();
+    //         timeoutIds.push(setTimeout(typeWriter, 1, txt, i, q, num));
+    //     }
+    // }
+
+</script>
+
+
+
+</html>
