@@ -197,117 +197,6 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- <section class="hero is-small ">
-  <div class="hero-body">
-    <div class="container  is-max-widescreen">
-      <h2 class="title is-3">Datasets</h2>
-      <div class="level-set has-text-justified">
-
-        <p>
-          Below we show examples of the input data required for these algorithms. We use open-source humanoid motion-capture clips for a variety of
-          complex tasks. The input to NEAR is simply a set of state-transition features $\{ (s,s') \}$ from these motions, where each state $s$ is
-          a vector of the cartesian positions and velocities of the character's joints. 
-        </p>
-     </div>
-
-   </div>
- </div>
-</section> -->
-
-
-
-<!-- <section class="hero teaser is-small ">
-  <div class="video-gallery-container"> -->
-
-    <!-- Row 1 -->
-    <!-- <div class="video-block">
-        <video poster="" id="video1" autoplay controls muted loop>
-            <source src="static/videos/walk_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Walking</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video2" autoplay controls muted loop>
-            <source src="static/videos/run_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Running</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video3" autoplay controls muted loop>
-            <source src="static/videos/left_punch_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Single Left Punch</h3>
-        </div>
-    </div> -->
-
-    <!-- Row 2 -->
-    <!-- <div class="video-block">
-        <video poster="" id="video4" autoplay controls muted loop>
-            <source src="static/videos/crane_pose_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Crane Pose</h3>
-        </div>
-    </div>
-
-     <div class="video-block">
-        <video poster="" id="video5" autoplay controls muted loop>
-            <source src="static/videos/mummy_walk_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Mummy Style Walking</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video6" autoplay controls muted loop>
-            <source src="static/videos/single_spin_kick_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Spin Kick</h3>
-        </div>
-    </div> -->
-
-    <!-- Row 3 -->
-    <!-- <div class="video-block">
-        <video poster="" id="video7" autoplay controls muted loop>
-            <source src="static/videos/video7.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Some caption</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video8" autoplay controls muted loop>
-            <source src="static/videos/video8.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Some caption</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video9" autoplay controls muted loop>
-            <source src="static/videos/video9.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Some caption</h3>
-        </div>
-    </div> -->
-
-<!-- </div>
-</section> -->
-
-
 <section class="section">
   <div class="container is-max-widescreen">
     <div class="rows">
@@ -458,6 +347,54 @@
 
 
 
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3"><span class="dvima">Dataset</span></h2>
+          <div class="level-set has-text-justified">
+          <p>
+            Below we show examples of the input data required for these algorithms. We use open-source humanoid motion-capture clips for a variety of
+            complex tasks. The input to NEAR is simply a set of state-transition features $\{ (s,s') \}$ from these motions, where each state $s$ is
+            a vector of the cartesian positions and velocities of the character's joints. 
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="columns">
+      <div class="column is-half">
+        <!-- <p style="font-size: 1.5em"><b>Learnt Rewards Only</b></p> -->
+        <div class="col-md-4 col-sm-4 col-xs-4">
+          <img src="static/videos/demo/walking_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Walking' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/running_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Running' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/crane_pose_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Crane Pose' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/left_punch_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Left Punch' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/mummy_walking_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Mummy Style Walk' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/spin_kick_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Spin Kick' onclick="populateDemo(this, 2, false);">
+        </div>
+
+        <br>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+          <video id="demo-video-2" style="border-radius: 5px;" autoplay loop muted webkit-playsinline
+            playsinline onclick="setAttribute('controls', 'true');">
+            <source id="expandedImg-2" src="static/videos/placeholder.mp4" type="video/mp4">
+          </video>
+          <!-- Placeholder for the second video -->
+          <div id="video-placeholder-2" class="video-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
     <div class="container is-max-widescreen content">
@@ -547,12 +484,20 @@ function populateDemo(imgs, num, add_comparison = true) {
     // Add the first title "Vid1" with proper styling
     var name = imgs.alt;
     var title1 = document.createElement("h3");
+    if (num==1) {
     title1.id = "title1-" + num;
     title1.innerText = "NEAR: " + name;
     title1.style.fontSize = "1.2em";
     title1.style.textAlign = "center";
     title1.style.fontWeight = "bold";  // Make it look like a title
-    video1.parentElement.insertBefore(title1, video1);
+    video1.parentElement.insertBefore(title1, video1);}
+    else {
+    title1.id = "title1-" + num;
+    title1.innerText = "Expert: " + name;
+    title1.style.fontSize = "1.2em";
+    title1.style.textAlign = "center";
+    title1.style.fontWeight = "bold";  // Make it look like a title
+    video1.parentElement.insertBefore(title1, video1);}
 
     // Check if we need to add the comparison (second video)
     if (add_comparison) {
@@ -570,6 +515,7 @@ function populateDemo(imgs, num, add_comparison = true) {
         video2.setAttribute("autoplay", "true"); // Enable autoplay
         video2.setAttribute("loop", "true"); // Enable looping
         video2.setAttribute("muted", "true"); // Ensure video is muted for autoplay compliance
+        video2.style.borderRadius = "5px";
 
         // Create and set the source for the second video
         var source2 = document.createElement("source");

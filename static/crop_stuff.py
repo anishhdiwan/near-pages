@@ -2,33 +2,33 @@ import os
 from PIL import Image
 
 # Function to crop the image while maintaining the aspect ratio
-# def crop_image(image, crop_percentage):
-#     width, height = image.size
-#     crop_width = int(width * crop_percentage)
-#     crop_height = int(height * crop_percentage)
-    
-#     left = crop_width // 2
-#     upper = crop_height // 2
-#     right = width - (crop_width // 2)
-#     lower = height - (crop_height // 2)
-    
-#     # Crop the image
-#     cropped_image = image.crop((left, upper, right, lower))
-#     return cropped_image
-
 def crop_image(image, crop_percentage):
     width, height = image.size
     crop_width = int(width * crop_percentage)
+    crop_height = int(height * crop_percentage)
     
-    # Keep the full height, no cropping
-    left = 0  # Start from the left
-    upper = 0  # No change in vertical position
-    right = crop_width  # Keep the percentage of the width starting from the left
-    lower = height  # Full height
+    left = crop_width // 2
+    upper = crop_height // 2
+    right = width - (crop_width // 2)
+    lower = height - (crop_height // 2)
     
     # Crop the image
     cropped_image = image.crop((left, upper, right, lower))
     return cropped_image
+
+# def crop_image(image, crop_percentage):
+#     width, height = image.size
+#     crop_width = int(width * crop_percentage)
+    
+#     # Keep the full height, no cropping
+#     left = 0  # Start from the left
+#     upper = 0  # No change in vertical position
+#     right = crop_width  # Keep the percentage of the width starting from the left
+#     lower = height  # Full height
+    
+#     # Crop the image
+#     cropped_image = image.crop((left, upper, right, lower))
+#     return cropped_image
 
 
 # Function to process all PNG images in a directory
