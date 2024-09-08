@@ -18,7 +18,7 @@ from rembg import remove, new_session
 model_name = "isnet-general-use"
 session = new_session(model_name)
 
-for file in Path('./images/stills/walk').glob('*.png'):
+for file in Path('./images/stills/strike').glob('*.png'):
     input_path = str(file)
     output_path = str(file.parent / (file.stem + ".out.png"))
 
