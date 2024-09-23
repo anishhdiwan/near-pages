@@ -43,11 +43,11 @@ image_path = 'strike.png'  # Replace with your image path
 image = Image.open(image_path)
 
 # Label to add
-label = "Walk + Punch"
+label = "Target Reaching & Punching"
 
 # Call the function to add the label to the image
-image_with_label = add_label_to_image(image, label, font_color="black", font_size=140, bold=True)
+image_with_label = add_label_to_image(image, label, font_color="black", font_size=120, bold=True)
 
 # Save or display the image
 image_with_label.show()  # Display the image
-image_with_label.save('strike.png')  # Save the modified image
+image_with_label.save(image_path)  # Save the modified image

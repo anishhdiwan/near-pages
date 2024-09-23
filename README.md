@@ -44,6 +44,8 @@ To edit the websites contents edit the `index.html` file. It contains different 
 ## About
 A project page for Noise-conditioned Energy-based Annealed Rewards (NEAR)
 
+[Page Link](https://anishhdiwan.github.io/noise-conditioned-energy-based-annealed-rewards/)
+
 ## Acknowledgments
 Parts of this project page were adopted from the [Nerfies](https://nerfies.github.io/) page.
 
