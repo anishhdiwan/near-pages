@@ -517,6 +517,8 @@ function populateDemo(imgs, num, add_comparison = true) {
         video2.setAttribute("autoplay", "true"); // Enable autoplay
         video2.setAttribute("loop", "true"); // Enable looping
         video2.setAttribute("muted", "true"); // Ensure video is muted for autoplay compliance
+        video2.setAttribute("webkit-playsinline", "");  // Added this line to disable fullscreen on iOS
+        video2.setAttribute("playsinline", "");         // Added this line to ensure the video plays inline
         video2.style.borderRadius = "5px";
 
         // Create and set the source for the second video

@@ -117,15 +117,15 @@
                     </span> -->
 
                     <!-- Supplementary PDF link -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                    <span class="link-block">
+                      <a href="https://resolver.tudelft.nl/uuid:12906ba1-4e5f-4756-908e-96e5ccd55b59" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         <i class="fas fa-file-pdf"></i>
                       </span>
-                      <span>Supplementary</span>
+                      <span>Paper</span>
                     </a>
-                  </span> -->
+                  </span>
 
                   <!-- Github link -->
                   <span class="link-block">
@@ -197,129 +197,20 @@
 </section>
 <!-- End paper abstract -->
 
-
-<!-- <section class="hero is-small ">
-  <div class="hero-body">
-    <div class="container  is-max-widescreen">
-      <h2 class="title is-3">Datasets</h2>
-      <div class="level-set has-text-justified">
-
-        <p>
-          Below we show examples of the input data required for these algorithms. We use open-source humanoid motion-capture clips for a variety of
-          complex tasks. The input to NEAR is simply a set of state-transition features $\{ (s,s') \}$ from these motions, where each state $s$ is
-          a vector of the cartesian positions and velocities of the character's joints. 
-        </p>
-     </div>
-
-   </div>
- </div>
-</section> -->
-
-
-
-<!-- <section class="hero teaser is-small ">
-  <div class="video-gallery-container"> -->
-
-    <!-- Row 1 -->
-    <!-- <div class="video-block">
-        <video poster="" id="video1" autoplay controls muted loop>
-            <source src="static/videos/walk_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Walking</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video2" autoplay controls muted loop>
-            <source src="static/videos/run_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Running</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video3" autoplay controls muted loop>
-            <source src="static/videos/left_punch_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Single Left Punch</h3>
-        </div>
-    </div> -->
-
-    <!-- Row 2 -->
-    <!-- <div class="video-block">
-        <video poster="" id="video4" autoplay controls muted loop>
-            <source src="static/videos/crane_pose_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Crane Pose</h3>
-        </div>
-    </div>
-
-     <div class="video-block">
-        <video poster="" id="video5" autoplay controls muted loop>
-            <source src="static/videos/mummy_walk_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Mummy Style Walking</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video6" autoplay controls muted loop>
-            <source src="static/videos/single_spin_kick_demo.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Spin Kick</h3>
-        </div>
-    </div> -->
-
-    <!-- Row 3 -->
-    <!-- <div class="video-block">
-        <video poster="" id="video7" autoplay controls muted loop>
-            <source src="static/videos/video7.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Some caption</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video8" autoplay controls muted loop>
-            <source src="static/videos/video8.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Some caption</h3>
-        </div>
-    </div>
-
-    <div class="video-block">
-        <video poster="" id="video9" autoplay controls muted loop>
-            <source src="static/videos/video9.mp4" type="video/mp4">
-        </video>
-        <div class="video-grid-row-caption">
-          <h3>Some caption</h3>
-        </div>
-    </div> -->
-
-<!-- </div>
-</section> -->
-
-
 <section class="section">
   <div class="container is-max-widescreen">
     <div class="rows">
       <div class="rows is-centered">
         <div class="row is-full-width">
           <h2 class="title is-3"><span class="dvima">NEAR Policies</span></h2>
+          <div class="level-set has-text-justified">
           <p>
             This demo shows the policies learnt using NEAR in several contact-rich, physics-dependent imitation tasks. We use the open-source Isaac Gym 
             benchmark environment and compare our method with Adversarial Motion Priors (AMP) [2]. Further, we also train the agent in a goal-conditioned setting
-            to achieve stylised global goals such as target reaching, and with temporally and spatially composed learnt rewards for hybrid motions that are not present 
+            to achieve stylised global goals such as target reaching, and with temporally and spatially composed learnt rewards to learn hybrid motions that are not directly present 
             in the expert dataset.  
           </p>
+        </div>
         </div>
       </div>
     </div>
@@ -336,9 +227,13 @@
           <img src="static/videos/near_spin_kick.png" width="25%" style="border-radius: 5px;" alt='Spin Kick' onclick="populateDemo(this, 1);">
         </div>
 
-        <p style="font-size: 1.5em"><b>Goal-Conditioned RL w/ Learnt Rewards</b></p>
+        <br>
+        <p style="font-size: 1.5em"><b>Composed Rewards</b></p>
         <div class="col-md-4 col-sm-4 col-xs-4">
-          <img src="static/videos/near_target_reaching.png" width="25%" style="border-radius: 5px;" alt='Target Reaching' onclick="populateDemo(this, 1, false);">
+          <img src="static/videos/near_target_reaching_walk.png" width="25%" style="border-radius: 5px;" alt='Target Reaching (walking)' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_target_reaching_run.png" width="25%" style="border-radius: 5px;" alt='Target Reaching (running)' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_strike.png" width="25%" style="border-radius: 5px;" alt='Target Reaching & Punching' onclick="populateDemo(this, 1);">
+          <img src="static/videos/near_walk_and_wave.png" width="25%" style="border-radius: 5px;" alt='Walking & Waving' onclick="populateDemo(this, 1, false);">
         </div>
 
         <!-- <p style="font-size: 1.5em"><b>Spatially & Temporally Composed Learnt Rewards</b></p>
@@ -371,57 +266,134 @@
       <div class="level-set has-text-justified">
 
         <p>
-          Our proposed algorithm (NEAR) uses energy-based generative models to learn data-informed reward functions for imitation learning.
-          Given a dataset of the expert's state-only features $D \equiv \{ x \}$, we train a modified version of <em>Noise-conditioned Score Networks</em> [1] to learn a conditional parameterised energy function
+          NEAR uses energy-based generative models to learn data-informed reward functions for imitation learning (IL).
+          Given a dataset of the expert's state-only features $\mathcal{M} \equiv \{ x \}$, we train a modified version of <em>Noise-conditioned Score Networks</em> [1] to learn a conditional parameterised energy function
           $e_{\theta}(x', \sigma): \mathbb{R}^D \rightarrow \mathbb{R}$.
 
           <br><br>
-
           $e_{\theta}$ approximates the energy of samples $x'$ in a perturbed data distribution obtained 
-          by the local addition of Gaussian noise $\mathcal{N}(x,\sigma)$ to each sample $x$ in the expert's data distribution.
+          by the local addition of Gaussian noise $\mathcal{N}(x,\sigma)$ to each sample $x$ in the expert's data distribution $p_D$.
 
           Our paper leverages the fact that the energy of a sample $x$ is essentially just a scalar-valued measure of the closeness of 
-          $x$ to the data distribution, meaning that it can be used as a reward signal to guide a policy to generate motions similar to the expert's.
-
-          
-          <!-- In this paper, we propose to use energy-based generative models to learn data-informed reward functions for imitation learning.
-          Given a dataset of the expert's state-only features $D \equiv \{ x \}$, we train a modified version of <em>Noise-conditioned Score Networks</em> [1] to learn a conditional parameterised energy function
-          $e_{\theta}(x', \sigma): \mathbb{R}^D \rightarrow \mathbb{R}$ that approximates the energy of samples $x'$ in a perturbed data distribution obtained 
-          by the local addition of Gaussian noise $\mathcal{N}(x,\sigma)$ to each sample $x$ in the expert's data distribution. Under a geometric noise scale $\{\sigma_i\}_{i=1}^L$,
-          the energy function at each noise level $\sigma_k$ is essentially a dilated version of the original data distribution's energy landscape. Our paper leverages 
-          the fact that for a sample $x \in X$, where $X$ is the space of data samples, the energy of the sample is essentially just a scalar-valued measure of the closeness of 
-          $x$ to the data distribution, meaning that it can be used as a reward signal to guide a policy to generate motions that gradually resemble those in the expert 
-          data distribution. Hence, we propose to use these learnt energy functions as reward functions in reinforcement learning.  -->
+          $x$ to the $p_D$, meaning that it can be used as a reward signal to guide a policy to generate imitation motions.
 
           <br><br>
-          We also introduce an annealing method inspired by <em>Annealed Langevin Dynamics</em> [1] to gradually switch between these learnt energy functions depending
-          on the agents progress in the imitation task. 
-          Because of the dilated nature of these energy functions, they are prone to be constant-valued depending on the level of dilation and manifold of samples
-          generated by the current policy.
-          Annealing ensures that the reward function being used in reinforcement learning is always well defined, non-constant, and smooth in the manifold of
-          policy generated samples. An example of the dilated energy function in a 2D goal-reaching task is shown below.   
+          Energy-based reward functions are better than adversarial reward functions (current SOTA in observation-based IL) for several reasons. 
+          They are not prone to issues like instability or mode-collapse, are able to capture the expert's distribution more accurately, and are also smooth
+          in the sample space. This means that the learnt rewards are always non-ambiguous and offer a smooth signal for improvement. Below, we compare the mechanisms 
+          of energy-based and adversarial imitation learning through a 2D toy-task.
+
+ 
         </p>
      </div>
 
      <br><br>
 
-      <div class="image-block-container">
-        <div class="image-block">
-            <img src="static/images/new_illustration.png" alt="Image 1", width="100%">
-        </div>
-        <!-- <div class="image-block">
-            <img src="static/images/maze_env_ncsnv2.png" alt="Image 2", width="80%">
-        </div> -->
+     <div class="image-block-container" style="display: flex; justify-content: center; align-items: center;">
+      <div class="image-block" style="text-align: center;">
+          <img src="static/images/new_illustration.png" alt="Image 1" width="70%">
       </div>
+  </div>
+  
       <!-- Common Caption for images -->
       <div class="video-grid-row-caption">
-        <h3>An illustration of the AMP discriminator's learnt rewards and decision boundary in a 2D target reaching imitation task. In constrast, NEAR learns a smoother and more accurate reward function.</h3>
+        <h3>An illustration of NEAR and AMP reward functions in a 2D target reaching task. NEAR learns a much more accurate representation of $p_D$, 
+          is smoother in the space, and does not depend on the policy-generated samples to learn the reward function.</h3>
       </div>
       <!-- <br><br>
       Below, we show comparisons between the policies learnt using NEAR and those learnt using Adversarial Motion Priors (AMP) [2]. -->
    </div>
  </div>
 </section>
+
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <h2 class="title is-3">Training Pipeline</h2>
+      <div class="level-set has-text-justified">
+
+        <p>
+          NEAR uses a two-step training procedure. We first learnt the reward function using NCSN and then use this reward function to train a policy
+          using GPU accelerated reinforcement learning. Optionally, an envionment supplied task-reward and goal can also be incorporated in the problem
+          to learn stylised motions like target-reaching. 
+
+          <br><br>
+          We also introduce an annealing method inspired by <em>Annealed Langevin Dynamics</em> [1] to gradually switch between these learnt energy functions depending
+          on the agent's progress in the imitation task. 
+          Because of the dilated nature of these energy functions, they are prone to be constant-valued depending on the level of dilation and manifold of samples
+          generated by the current policy.
+          Annealing ensures that the reward function being used in reinforcement learning is always well defined, non-constant, and smooth in the manifold of
+          policy generated samples.  
+        </p>
+     </div>
+
+     <br><br>
+
+     <div class="image-block-container" style="display: flex; justify-content: center; align-items: center;">
+      <div class="image-block" style="text-align: center;">
+          <img src="static/images/website_illustration.png" alt="Image 1" width="100%">
+      </div>
+  </div>
+  
+      <!-- Common Caption for images -->
+      <!-- <div class="video-grid-row-caption">
+        <h3>An illustration of the AMP discriminator's learnt rewards and decision boundary in a 2D target reaching imitation task. In constrast, NEAR learns a smoother and more accurate reward function.</h3>
+      </div> -->
+      <!-- <br><br>
+      Below, we show comparisons between the policies learnt using NEAR and those learnt using Adversarial Motion Priors (AMP) [2]. -->
+   </div>
+ </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="rows">
+      <div class="rows is-centered">
+        <div class="row is-full-width">
+          <h2 class="title is-3"><span class="dvima">Dataset</span></h2>
+          <div class="level-set has-text-justified">
+          <p>
+            Below we show examples of the input data required for these algorithms. We use open-source humanoid motion-capture clips for a variety of
+            complex tasks. The input to NEAR is simply a set of state-transition features $\{ (s,s') \}$ from these motions, where each state $s$ is
+            a vector of the cartesian positions and velocities of the character's joints. 
+          </p>
+        </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="columns">
+      <div class="column is-half">
+        <!-- <p style="font-size: 1.5em"><b>Learnt Rewards Only</b></p> -->
+        <div class="col-md-4 col-sm-4 col-xs-4">
+          <img src="static/videos/demo/walking_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Walking' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/running_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Running' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/crane_pose_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Crane Pose' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/left_punch_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Left Punch' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/mummy_walking_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Mummy Style Walk' onclick="populateDemo(this, 2, false);">
+          <img src="static/videos/demo/spin_kick_expert_motion.png" width="25%" style="border-radius: 5px;" alt='Spin Kick' onclick="populateDemo(this, 2, false);">
+        </div>
+
+        <br>
+      </div>
+      <div class="column is-half">
+        <div class="video-container">
+          <video id="demo-video-2" style="border-radius: 5px;" autoplay loop muted webkit-playsinline
+            playsinline onclick="setAttribute('controls', 'true');">
+            <source id="expandedImg-2" src="static/videos/placeholder.mp4" type="video/mp4">
+          </video>
+          <!-- Placeholder for the second video -->
+          <div id="video-placeholder-2" class="video-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
 
@@ -514,12 +486,20 @@ function populateDemo(imgs, num, add_comparison = true) {
     // Add the first title "Vid1" with proper styling
     var name = imgs.alt;
     var title1 = document.createElement("h3");
+    if (num==1) {
     title1.id = "title1-" + num;
     title1.innerText = "NEAR: " + name;
     title1.style.fontSize = "1.2em";
     title1.style.textAlign = "center";
     title1.style.fontWeight = "bold";  // Make it look like a title
-    video1.parentElement.insertBefore(title1, video1);
+    video1.parentElement.insertBefore(title1, video1);}
+    else {
+    title1.id = "title1-" + num;
+    title1.innerText = "Expert: " + name;
+    title1.style.fontSize = "1.2em";
+    title1.style.textAlign = "center";
+    title1.style.fontWeight = "bold";  // Make it look like a title
+    video1.parentElement.insertBefore(title1, video1);}
 
     // Check if we need to add the comparison (second video)
     if (add_comparison) {
@@ -537,6 +517,9 @@ function populateDemo(imgs, num, add_comparison = true) {
         video2.setAttribute("autoplay", "true"); // Enable autoplay
         video2.setAttribute("loop", "true"); // Enable looping
         video2.setAttribute("muted", "true"); // Ensure video is muted for autoplay compliance
+        video2.setAttribute("webkit-playsinline", "");  // Added this line to disable fullscreen on iOS
+        video2.setAttribute("playsinline", "");         // Added this line to ensure the video plays inline
+        video2.style.borderRadius = "5px";
 
         // Create and set the source for the second video
         var source2 = document.createElement("source");

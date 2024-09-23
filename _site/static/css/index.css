@@ -261,6 +261,18 @@ body {
   font-style: italic;
 }
 
+/* Prevent fullscreen option on mobile devices */
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;  /* Hide the fullscreen button on WebKit browsers */
+}
+
+video::-moz-fullscreen-button {
+  display: none !important;  /* Hide the fullscreen button on Firefox */
+}
+
+video::-ms-fullscreen-button {
+  display: none !important;  /* Hide the fullscreen button on Microsoft Edge */
+}
 
 
 /* Ensure the video container maintains space for both videos */
